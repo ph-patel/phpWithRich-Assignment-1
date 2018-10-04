@@ -24,11 +24,11 @@ $cmd->execute();
 $resort = $cmd->fetchAll();
 
 //create table
- echo'<table class="table table-striped table-bordered table-responsive"><thead><th>Name</th><th>Address</th><th>Phone</th> <th>Location</th><th>Cost</th><th>Swimming pool</th></thead> <tbody>';
+ echo'<table class="table table-striped table-bordered table-responsive"><thead><th>Id.</th><th>Name</th><th>Address</th><th>Phone</th> <th>Location</th><th>Cost(in CAD per night)</th><th>Swimming pool</th><th>Actions</th></thead> <tbody>';
 
 //loop through the data
 foreach ($resort as $r) {
- echo "<tr class=\"success\"><td>".$r['name']."</td><td>".$r['address']."</td><td>".$r['phone']."</td><td>".$r['location']."</td><td>".$r['cost']."</td><td>".$r['swimming']."</td></tr>";
+ echo "<tr class=\"success\"><td>".$r['resortId']."</td><td>".$r['name']."</td><td>".$r['address']."</td><td>".$r['phone']."</td><td>".$r['location']."</td><td>".$r['cost']."</td><td>".$r['swimming']."</td><td>" . '<a  class="text-danger" href="delete-resort.php?resortId">Delete</a>'."</td></tr>";
 }
 
 //close the table

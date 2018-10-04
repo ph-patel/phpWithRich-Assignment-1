@@ -42,33 +42,34 @@ if(empty($cost)) {
     $OK = false;
 }
 
-if(OK == true){
+if(OK == true) {
 
     //connect to the database
-    $db = new PDO('mysql:host=aws.computerstudi.es;dbname=gc200397594', 'gc200397594','i0Pntn7CEF');
+    $db = new PDO('mysql:host=aws.computerstudi.es;dbname=gc200397594', 'gc200397594', 'i0Pntn7CEF');
 
     //setup and execute the insert command
     $sql = "INSERT INTO demo_for_assignment1 (name, address, phone, location , cost, swimming) 
         VALUES (:name, :address, :phone, :location , :cost, :swimming)";
-        $cmd = $db->prepare($sql);
-        $cmd->bindParam(':name', $name, PDO::PARAM_STR, 25);
-        $cmd->bindParam(':address', $address, PDO::PARAM_STR, 50);
-        $cmd->bindParam(':phone', $phone, PDO::PARAM_STR, 15);
-        $cmd->bindParam(':location', $location, PDO::PARAM_STR, 20);
-        $cmd->bindParam(':cost', $cost, PDO::PARAM_INT, 5);
-        $cmd->bindParam(':swimming', $swimming, PDO::PARAM_STR, 20);
+    $cmd = $db->prepare($sql);
+    $cmd->bindParam(':name', $name, PDO::PARAM_STR, 25);
+    $cmd->bindParam(':address', $address, PDO::PARAM_STR, 50);
+    $cmd->bindParam(':phone', $phone, PDO::PARAM_STR, 15);
+    $cmd->bindParam(':location', $location, PDO::PARAM_STR, 20);
+    $cmd->bindParam(':cost', $cost, PDO::PARAM_INT, 5);
+    $cmd->bindParam(':swimming', $swimming, PDO::PARAM_STR, 20);
 
-        $cmd->execute();
+    $cmd->execute();
 
 
     //disconnect
-    $db = null ;
+    $db = null;
 
-    echo "Resort saved !!!";
+    echo "Resort saved !!! <div class=\"alert alert-success\" role=\"alert\">Well Done !! New Resort Successfully Added.</div>";
+}
     ?>
 
-    <div class="alert alert-success" role="alert">Well Done !! New Resort Successfully Added.</div>
-}
+
+
 
  <a href="resorts.php">View all resorts</a>
 </body>
