@@ -64,13 +64,16 @@ if(OK == true) {
     //disconnect
     $db = null;
 
-    echo "Resort saved !!! <div class=\"alert alert-success\" role=\"alert\">Well Done !! New Resort Successfully Added.</div>";
+    echo "<div class='container'>Resort saved !!! <div class=\"alert alert-success\" role=\"alert\">Well Done !! New Resort Successfully Added.</div> </div>";
 }
     ?>
 
 
 
 
- <a href="resorts.php">View all resorts</a>
+ <div class="container">
+     <a href="resorts.php" class="btn btn-lg btn-info">View all resorts</a>
+ </div>
+
 </body>
 </html>
